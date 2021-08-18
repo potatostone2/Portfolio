@@ -533,7 +533,7 @@ p {
     /* Nabbar */
     .navbar__toggle-btn {
         display: block;
-        top: 18px;
+        top: 16px;
         right: 18px;
         font-size: var(--font-medium);
     }
