@@ -23,22 +23,20 @@
 
 <body>
     <!-- navbar -->
-    <nav id="navbar">
+    <nav id="navbar" class="navbar--dark">
         <div class="navbar__logo">
             <i class="fab fa-diaspora"></i>
-            <a href="#">Eun</a>
+            <a href="#">Jellie</a>
         </div>
-        
-        <div class="navbar__menu">
+                
             <ul class="navbar__menu">
-                <li class="navbar__menu__item active">Home</li>
-                <li class="navbar__menu__item">About</li>
-                <li class="navbar__menu__item">Skills</li>
-                <li class="navbar__menu__item">My Work</li>
-                <li class="navbar__menu__item">Recommend</li>
-                <li class="navbar__menu__item">Contact</li>
-            </ul>        
-        </div>        
+                <li class="navbar__menu__item" data-link="#home">Home</li>
+                <li class="navbar__menu__item" data-link="#about">About</li>
+                <li class="navbar__menu__item" data-link="#skills">Skills</li>
+                <li class="navbar__menu__item" data-link="#work">My Work</li>
+                <li class="navbar__menu__item" data-link="#testimonials">Testimonials</li>
+                <li class="navbar__menu__item" data-link="#contact">Contact</li>
+            </ul>                    
         
         <!-- Tooggle buutton -->
         <button class="navbar__toggle-btn">
@@ -48,10 +46,12 @@
     
     <!-- Home -->
     <section id="home">
-        <img src="images/profile2.jpg" alt="profile" class="home__avatar">
-        <h1 class="home__title">안녕하세요, <br> 저는 이정은 입니다.</h1>
-        <h2 class="home__description"></h2>
-        <button class="home__contact">Contact Me</button>
+        <div class="home__container">
+            <img src="images/profile2.jpg" alt="profile" class="home__avatar">
+            <h1 class="home__title">안녕하세요, <br>웹개발자 Jellie 입니다.</h1>
+            <h2 class="home__description"></h2>
+            <button class="home__contact" data-link="#contact">Contact Me</button>
+        </div>
     </section>
 
     <!-- About -->
@@ -203,20 +203,20 @@
             <h1>My work</h1>
             <h2>Projects</h2>
             <div class="work__categories">
-                <button class="category__btn">
+                <button class="category__btn selected" data-filter="*">
                     All<span class="category__count">2</span>
                 </button>
-                <button class="category__btn">
+                <button class="category__btn" data-filter="front-end">
                     Front-end<span class="category__count">1</span>
                 </button>
-                <button class="category__btn">
+                <button class="category__btn" data-filter="back-end">
                     Back-end<span class="category__count">1</span>
                 </button>            
             </div>
     
             <div class="work__projects">
                 
-                <a href="" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="front-end">
                     <img class="project__img" src="images/youtube_thumnail.png" alt="Youtube">
                     <div class="project__description">
                         <h3>Youtube Clone</h3>
@@ -224,11 +224,11 @@
                     </div>
                 </a>
     
-                <a href="" class="project" target="blank">
+                <a href="#" class="project" target="blank" data-type="back-end">
                     <img class="project__img" src="images/youtube_thumnail.png" alt="Portfolio">
                     <div class="project__description">
-                        <h3>Portfolio</h3>
-                        <span>Portfolio web site coding with HTML and CSS</span>
+                        <h3>Back-end</h3>
+                        <span>Back-end Portfolio</span>
                     </div>
                 </a>
             </div>
@@ -239,7 +239,7 @@
     <!-- Recommend -->
     <section id="testimonials" class="section">
        <div class="section__container">
-        <h1>Recommend</h1>
+        <h1>Testimonials</h1>
         <h3>See what they say about me</h3>
         <div class="testimonials">
             <div class="testmonial">
@@ -295,5 +295,10 @@
         </div>
         <p class="contact__rights">2021 JungEun's Portfolio - All rights reserved</p>        
     </section>
+
+    <!-- Arrow up -->
+    <button class="arrow-up">
+        <i class="fas fa-chevron-circle-up"></i>
+    </button>
 </body>
 </html>
