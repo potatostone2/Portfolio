@@ -18,7 +18,7 @@
 
 /* Font size */
 --font-large: 48px;
---font-medium: 28px;
+--font-medium: 27px;
 --font-regular: 18px;
 --font-small: 16px;
 --font-micro: 14px;
@@ -64,6 +64,7 @@ button {
     cursor: pointer;
     border: none;
     outline: none;
+    padding: 0;
 }
 
 /* Typography */
@@ -176,6 +177,10 @@ p {
     border: 2px solid var(--color-white);
     border-radius:  var(--size-border-radius);
     color: var(--color-white);
+}
+
+.home__contact:hover {
+    background-color: var(--color-orange);
 }
 
 /* Section common */
@@ -326,6 +331,7 @@ p {
     font-size: var(--font-regular);
     padding: 8px 48px;
     text-align: center;
+    position: relative;
 }
 
 .category__btn.selected,
@@ -348,9 +354,9 @@ p {
     height: 24px;
     line-height: 24px;
     display: inline-block;    
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 4px;
+    right: 16px;
     opacity: 0;
     transition:  all var(--animation-duration);
 }
@@ -515,8 +521,21 @@ p {
 
 /* 반응형 768px screen width */
 @media screen and (max-width:768px) {
+    :root {
+        /* Font size */
+        --font-large: 30px;
+        --font-medium: 18px;
+        --font-regular: 16px;
+        --font-small: 14px;
+        --font-micro: 12px;
+    }
+
+    /* Nabbar */
     .navbar__toggle-btn {
         display: block;
+        top: 18px;
+        right: 18px;
+        font-size: var(--font-medium);
     }
 
     #navbar {
@@ -526,7 +545,7 @@ p {
     }
 
     #navbar.navbar--dark {
-        padding: 16px;
+        padding: 12px;
     }
 
     .navbar__menu {
@@ -540,14 +559,37 @@ p {
         display: block;
     }
 
+    .section{
+        padding: 16px;
+        padding-top: 40px;
+    }
+    
+    /* Home */
+    .home__title {
+        font-size: var(--font-medium);
+    }
+
+    .home__avatar {
+        width: 170px;
+        height: 170px;
+    }
+
+    /* About */
     .about__majors {
         flex-direction: column;
+        margin: 0 0;
     }
     
     .major {
-        margin-bottom: 38px;
+        margin-top: 10px;
+        margin-bottom: 8px;
     }
 
+    .major__icon {
+        margin-bottom: 0px;
+    }
+
+    /*  Skills */    
     .skillset {
         flex-direction:  column;
     }
@@ -556,8 +598,39 @@ p {
         flex-grow: 1;
     }
 
-    .testmonial__img {
-        width: 80px;
-        height: 80px;
+    /* Work */
+    .category__btn {
+        margin: 4px 0;
+    }
+
+    /* Testimonials */
+    .testmonial {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .testmonial__img:nth-child(even),
+    .testmonial__img:nth-child(odd) {
+        margin: 8px 0;
+        width: 120px;
+        height: 120px;       
+    }
+
+    .testmonial__speech-bubble {
+        order: 1;        
+    }
+
+    /* Contact */
+    .contact__title,
+    .contact__links {
+        margin: 0;
+    }
+
+    /* Arrow up */
+    .arrow-up {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
     }
 }
